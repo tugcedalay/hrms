@@ -11,6 +11,7 @@ import com.tobeto.core.utilities.Result;
 import com.tobeto.core.utilities.SuccessDataResult;
 import com.tobeto.dataAccess.abstracts.CandidateDao;
 import com.tobeto.entities.concretes.Candidate;
+import com.tobeto.entities.concretes.JobTitles;
 
 public class CandidateManager implements CandidateService{
     
@@ -24,14 +25,19 @@ public class CandidateManager implements CandidateService{
 	
 	
 	
-	@Override
-	public DataResult<List<Candidate>> getAll() {
-		// TODO Auto-generated method stub
-		return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(), "Data list");
-	}
 
 	@Override
 	public Result add(Candidate entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+	@Override
+	public DataResult<List<JobTitles>> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

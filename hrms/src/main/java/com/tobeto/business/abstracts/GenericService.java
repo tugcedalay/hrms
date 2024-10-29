@@ -4,9 +4,10 @@ import java.util.List;
 
 import com.tobeto.core.utilities.DataResult;
 import com.tobeto.core.utilities.Result;
+import com.tobeto.entities.concretes.JobTitles;
 
 public interface GenericService<T> {
-	DataResult<List<T>> getAll();
+	DataResult<List<JobTitles>> getAll();
 	
 	Result add(T entity);
 }

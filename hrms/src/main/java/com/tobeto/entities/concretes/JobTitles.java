@@ -1,5 +1,7 @@
 package com.tobeto.entities.concretes;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,4 +32,18 @@ public class JobTitles{
 	@NotBlank
 	@Column(name = "title")
     private String title;
+	
+	//private String companyName;
+	//private String jobPozisition;
+	//private String jobDescription;
+	//private String city;
+//	private String minSalary;
+//	private String maxSalary;
+//	private int openPositionCount;
+//	private LocalDate publicationDate;
+//	private LocalDate applicationDeadline;
+	
+	
+	
+	
 }
