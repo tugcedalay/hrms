@@ -75,11 +75,11 @@ public class JobTitlesManager implements JobTitlesService{
 
 
 
-	@Override
-	public Result add(JobTitlesService entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Result add1(JobTitles entity) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 	
 
 }

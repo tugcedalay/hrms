@@ -37,7 +37,7 @@ public class CandidateManager implements CandidateService{
 
 
 	@Override
-	public DataResult<List<JobTitles>> getAll() {
+	public DataResult<List<Candidate>> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

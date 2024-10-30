@@ -7,7 +7,8 @@ import com.tobeto.core.utilities.Result;
 import com.tobeto.entities.concretes.JobTitles;
 
 public interface GenericService<T> {
-	DataResult<List<JobTitles>> getAll();
+	DataResult<List<T>> getAll();
+	
 	
 	Result add(T entity);
 }
