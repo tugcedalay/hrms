@@ -38,7 +38,7 @@ import jakarta.xml.bind.annotation.XmlType;
     "dogumYili"
 })
 @XmlRootElement(name = "TCKimlikNoDogrula")
-public class TCKimlikNoDoğrula {
+public class TCKimlikNoDogrula {
 
     @XmlElement(name = "TCKimlikNo")
     protected long tcKimlikNo;

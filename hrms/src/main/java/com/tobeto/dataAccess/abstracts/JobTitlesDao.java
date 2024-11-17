@@ -8,6 +8,6 @@ import com.tobeto.entities.concretes.JobTitles;
 
 public interface JobTitlesDao extends JpaRepository<JobTitles, Integer> {
    boolean existsByTitle(String title);
-   
-   List<JobTitles> getByCategoryIn(List<Integer> jobTitles);
+  
+  //List<JobTitles> getByCategoryIn(List<Integer> jobTitles);
 }

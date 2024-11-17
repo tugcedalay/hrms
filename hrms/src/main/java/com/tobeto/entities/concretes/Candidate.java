@@ -35,14 +35,14 @@ public class Candidate extends User {
 	
 	@NotNull(message = "Identity number field cannot be null")
 	@NotBlank(message = "Identity number field cannot be blank")
-	@Column(name = "nationality_id")
+	@Column(name = "identity_number")
     private String nationalityId;
     
 	
 	
 	@NotNull(message = "Birth year field cannot be null")
 	@NotBlank(message = "Birth year  field cannot be blank")
-	@Column(name = "birth_name")
-    private String birthYear;
+	@Column(name = "birth_year")
+    private int birthYear;
     
 }

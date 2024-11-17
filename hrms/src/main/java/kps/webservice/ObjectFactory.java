@@ -35,8 +35,8 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link TCKimlikNoDogrula }
      */
-    public TCKimlikNoDoğrula authentication() {
-        return new TCKimlikNoDoğrula();
+    public TCKimlikNoDogrula createTCKimlikNoDogrula() {
+        return new TCKimlikNoDogrula();
     }
 
     /**
@@ -45,8 +45,8 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link TCKimlikNoDogrulaResponse }
      */
-    public TCKimlikNoDoğrula createAuthenticationResponse() {
-        return new TCKimlikNoDoğrula();
+    public TCKimlikNoDogrulaResponse createTCKimlikNoDogrulaResponse() {
+        return new TCKimlikNoDogrulaResponse();
     }
 
 }

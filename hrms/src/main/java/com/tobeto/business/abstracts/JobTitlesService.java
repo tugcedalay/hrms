@@ -19,7 +19,7 @@ public interface JobTitlesService extends GenericService<JobTitles>{
 	
 	
 	
-	DataResult<List<JobTitles>> getByJobTitlesIn(List<Integer> jobTitles);
+	//DataResult<List<JobTitles>> getByJobTitlesIn(List<Integer> jobTitles);
 	
 	//DataResult<JobTitles> findAllActiveJobsSortedByDate();
 	

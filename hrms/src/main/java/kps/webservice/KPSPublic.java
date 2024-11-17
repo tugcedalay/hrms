@@ -1,3 +1,4 @@
+
 package kps.webservice;
 
 import java.net.MalformedURLException;
@@ -16,7 +17,7 @@ import jakarta.xml.ws.WebServiceFeature;
  * Generated source version: 3.0
  * 
  */
-@WebServiceClient(name = "KPSPublic", targetNamespace = "http://tckimlik.nvi.gov.tr/WS", wsdlLocation = "file:/C:/campspring/hrms/src/main/resources/KPSPublic.xml")
+@WebServiceClient(name = "KPSPublic", targetNamespace = "http://tckimlik.nvi.gov.tr/WS", wsdlLocation = "file:/C:/Users/tgcda/git/repository4/hrms/src/main/resources/KPSPublic.xml")
 public class KPSPublic
     extends Service
 {
@@ -29,7 +30,7 @@ public class KPSPublic
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/C:/campspring/hrms/src/main/resources/KPSPublic.xml");
+            url = new URL("file:/C:/Users/tgcda/git/repository4/hrms/src/main/resources/KPSPublic.xml");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

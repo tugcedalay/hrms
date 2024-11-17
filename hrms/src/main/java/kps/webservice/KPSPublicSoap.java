@@ -26,7 +26,7 @@ public interface KPSPublicSoap {
     /**
      * 
      * @param ad
-     * @param string
+     * @param dogumYili
      * @param soyad
      * @param tcKimlikNo
      * @return
@@ -44,6 +44,6 @@ public interface KPSPublicSoap {
         @WebParam(name = "Soyad", targetNamespace = "http://tckimlik.nvi.gov.tr/WS")
         String soyad,
         @WebParam(name = "DogumYili", targetNamespace = "http://tckimlik.nvi.gov.tr/WS")
-        String dogumYili);
+        int dogumYili);
 
 }

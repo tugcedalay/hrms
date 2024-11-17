@@ -64,11 +64,11 @@ public class JobTitlesManager implements JobTitlesService{
 
 
 
-	@Override
-	public DataResult<List<JobTitles>> getByJobTitlesIn(List<Integer> jobTitles) {
-		return new SuccessDataResult<List<JobTitles>>
-		(this.jobTitlesDao.getByCategoryIn(jobTitles), "Data listelendi");
-	}
+//	@Override
+//	public DataResult<List<JobTitles>> getByJobTitlesIn(List<Integer> jobTitles) {
+//		return new SuccessDataResult<List<JobTitles>>
+//		(this.jobTitlesDao.getByCategoryIn(jobTitles), "Data listelendi");
+//	}
 
 
 

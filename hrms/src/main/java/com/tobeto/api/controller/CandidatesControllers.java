@@ -17,21 +17,26 @@ import com.tobeto.entities.concretes.Candidate;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/candidate")
+@RequestMapping("/api/candidates")
 public class CandidatesControllers {
    
 	
-	@Autowired
+	
 	private CandidateService candidateService;
 	
+	    @Autowired
+	    public CandidatesControllers(CandidateService candidateService) {
+	        super();
+	    	this.candidateService = candidateService;
+	    }
 
-	@GetMapping
+	@GetMapping("/getAll")
 	public DataResult<List<Candidate>> getAll() {
 		return this.candidateService.getAll();
 	}
 
 	@Valid
-	@PostMapping
+	@PostMapping("/add")
 	public Result add(@RequestBody Candidate candidate) {
 		return this.candidateService.add(candidate);
 	}
