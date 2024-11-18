@@ -1,9 +1,13 @@
 package com.tobeto.entities.concretes;
 
+import java.util.List;
+
 import com.tobeto.entities.abstracts.User;
+import com.tobeto.entities.confirm.VerificationCodeCandidate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -45,4 +49,7 @@ public class Candidate extends User {
 	@Column(name = "birth_year")
     private int birthYear;
     
+	
+	@OneToMany(mappedBy ="candidate")
+	private List<VerificationCodeCandidate> verificationCodeCandidates;
 }

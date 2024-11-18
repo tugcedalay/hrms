@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tobeto.business.abstracts.CandidateService;
 import com.tobeto.core.utilities.DataResult;
 import com.tobeto.core.utilities.Result;
+import com.tobeto.dtos.candidate.CreateCandidateRequest;
 import com.tobeto.entities.concretes.Candidate;
 
 import jakarta.validation.Valid;
@@ -35,10 +36,10 @@ public class CandidatesControllers {
 		return this.candidateService.getAll();
 	}
 
-	@Valid
+	//@Valid
 	@PostMapping("/add")
-	public Result add(@RequestBody Candidate candidate) {
-		return this.candidateService.add(candidate);
+	public Result add(@RequestBody CreateCandidateRequest candidateRequest) {
+		return this.candidateService.add(candidateRequest);
 	}
 	
 }

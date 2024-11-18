@@ -1,7 +1,5 @@
 package com.tobeto.business.abstracts;
 
-import com.tobeto.entities.concretes.Employee;
-
-public interface EmployeeService extends GenericService<Employee>{
+public interface EmployeeService {
       boolean confirmEmployer(int employerId);
 }

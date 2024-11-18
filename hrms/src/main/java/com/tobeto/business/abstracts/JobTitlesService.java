@@ -6,7 +6,7 @@ import com.tobeto.core.utilities.DataResult;
 import com.tobeto.core.utilities.Result;
 import com.tobeto.entities.concretes.JobTitles;
 
-public interface JobTitlesService extends GenericService<JobTitles>{
+public interface JobTitlesService {
 	DataResult<List<JobTitles>> getAll();
     DataResult<List<JobTitles>> getAllSorted();
     DataResult<List<JobTitles>> getAll(int pageNo, int pageSize);  

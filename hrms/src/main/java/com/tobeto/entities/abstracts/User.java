@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED) //superclass islevi gorur
 @Table(name = "users")
 public abstract class User {
     
@@ -45,6 +45,8 @@ public abstract class User {
 	@Column(name = "password")
     private String password;
     
+	
+	//degiskenin veritabanında saklanmamasını saglar 
 	@Transient
     private String passwordRepeat;
 }
