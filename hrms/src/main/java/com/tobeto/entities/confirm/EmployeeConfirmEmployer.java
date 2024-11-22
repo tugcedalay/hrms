@@ -1,6 +1,6 @@
 package com.tobeto.entities.confirm;
 
-import com.tobeto.entities.concretes.Employers;
+import com.tobeto.entities.concretes.Employer;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,5 +30,5 @@ public class EmployeeConfirmEmployer {
 
 	@ManyToOne
 	@JoinColumn(name = "employer_id")
-	private Employers employer;
+	private Employer employer;
 }

@@ -14,10 +14,12 @@ import com.tobeto.core.config.modelMapper.ModelMapperService;
 import com.tobeto.core.utilities.DataResult;
 import com.tobeto.core.utilities.ErrorResult;
 import com.tobeto.core.utilities.Result;
+import com.tobeto.core.utilities.SuccessDataResult;
 import com.tobeto.core.utilities.SuccessResult;
 import com.tobeto.dataAccess.abstracts.CandidateDao;
 import com.tobeto.dataAccess.abstracts.VerificationCodeCandidateDao;
 import com.tobeto.dtos.candidate.CreateCandidateRequest;
+import com.tobeto.dtos.candidate.GetAllCandidateResponse;
 import com.tobeto.entities.concretes.Candidate;
 import com.tobeto.entities.confirm.VerificationCodeCandidate;
 
@@ -44,7 +46,16 @@ public class CandidateManager implements CandidateService{
 	@Override
 	public Result add(CreateCandidateRequest request) {
 		
-		Candidate candidate = modelMapper.forRequest().map(request, Candidate.class);
+		//Candidate candidate = modelMapper.forRequest().map(request, Candidate.class);
+		
+		Candidate candidate = new Candidate();
+		candidate.setNationalityId(request.getNationalityId());
+		candidate.setFirstName(request.getFirstName());
+		candidate.setLastName(request.getLastName());
+		candidate.setBirthYear(request.getBirthYear());
+        candidate.setEmail(request.getEmail());
+        candidate.setPassword(request.getPassword());
+        candidate.setPasswordRepeat(request.getPasswordRepeat());
 		
 		if (!userCheckService.CheckIfRealPerson(candidate))
 			return new ErrorResult("Not a valid person");
@@ -58,13 +69,13 @@ public class CandidateManager implements CandidateService{
 		if (candidateDao.existsByNationalityId(candidate.getNationalityId()))
 			return new ErrorResult("Identification number already in use!");
 
-//		VerificationCodeCandidate verificationCodeCandidate = new VerificationCodeCandidate();
-//		verificationCodeCandidate.setCandidate(candidate);
-//		verificationCodeCandidate.setCode("12345");
-//		verificationCodeCandidate.setVerified(false);
-//		verificationCodeCandidate.setVerifiedDate(LocalDate.now());
-//		
-//		this.verificationCodeCandidateDao.save(verificationCodeCandidate);
+		VerificationCodeCandidate verificationCodeCandidate = new VerificationCodeCandidate();
+		verificationCodeCandidate.setCandidate(candidate);
+		verificationCodeCandidate.setCode("12345");
+		verificationCodeCandidate.setVerified(false);
+		verificationCodeCandidate.setVerifiedDate(LocalDate.now());
+		
+		this.verificationCodeCandidateDao.save(verificationCodeCandidate);
 		
 		this.candidateDao.save(candidate);
 		return new SuccessResult("Candidate is added");
@@ -73,8 +84,13 @@ public class CandidateManager implements CandidateService{
 	}
 
 	@Override
-	public DataResult<List<Candidate>> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public DataResult<List<GetAllCandidateResponse>> getAll() {
+		List<Candidate> candidates = this.candidateDao.findAll();
+		
+		List<GetAllCandidateResponse> responses = candidates.stream()
+				.map(c -> modelMapper.forResponse().map(c, GetAllCandidateResponse.class)).toList();
+		
+		
+		return new SuccessDataResult<List<GetAllCandidateResponse>>(responses, "Data Listelendi");
 	}
 }

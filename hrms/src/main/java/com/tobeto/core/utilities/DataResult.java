@@ -1,8 +1,12 @@
 package com.tobeto.core.utilities;
 
+import lombok.Getter;
+
+@Getter
 public class DataResult<T> extends Result{
     
 	private T data;
+	
 	
 	public DataResult(T data, boolean success, String message) {
 		super(success, message);

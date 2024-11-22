@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "employers")
-public class Employers extends User {
+public class Employer extends User {
     
 	@NotNull
 	@NotBlank
